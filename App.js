@@ -14,7 +14,6 @@ import AssetsContext from './src/app/context/Assetscontext';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { OnboardingScreen } from './src/app/screens/onboarding';
 import { LoginScreen } from './src/app/screens/auth/loginScreen';
 import { SignUpScreen } from './src/app/screens/auth/signupScreen';
 import { PasswordScreen } from './src/app/screens/auth/password_setup';
