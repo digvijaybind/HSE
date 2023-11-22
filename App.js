@@ -100,15 +100,6 @@ export const App = () => {
                 headerShown: false,
               }}
             />
-            <Stack.Screen
-              name="onboarding"
-              component={OnboardingScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-       
-
             <Stack.Screen name="signup"
               component={SignUpScreen}
               options={{
