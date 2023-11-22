@@ -38,36 +38,34 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export const PasswordScreen = ({ navigation }) => {
 
   return (
-    <View style={tw`bg-[#ffffff] w-full h-full relative `}>
-      <ScrollView style={tw``}>
-        <View style={tw`w-[90%] mx-[5%] h-full flex flex-col items-start mb-[30px]`}>
+    <View style={{ backgroundColor: '#ffffff', width: '100%', height: '100%', position: 'relative' }}>
+      <ScrollView style={{}}>
+        <View style={{ width: '90%', marginLeft: '5%', height: '100%', flexDirection: 'column', alignItems: 'flex-start', marginBottom: 30 }}>
           <MaterialCommunityIcons
             style={{ marginTop: 45 }}
             name="chevron-left"
             size={30}
           />
-          <View style={tw`w-full flex justify-center items-center flex-col mb-[30px]  `}>
-            <Text style={tw`text-[22px] font-bold`}>
+          <View style={{ width: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: 30 }}>
+            <Text style={{ fontSize: 22, fontWeight: 'bold' }}>
               Set Password
             </Text>
-            <View style={tw`w-full flex justify-center items-center flex-col mt-[30px]`}>
-              <Text style={tw`text-[#5A5A5A]`}>
+            <View style={{ width: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
+              <Text style={{ color: '#5A5A5A' }}>
                 Your password must have
               </Text>
-              <Text style={tw`text-[#5A5A5A]`}>
+              <Text style={{ color: '#5A5A5A' }}>
                 One Uppercase letter
               </Text>
-              <Text style={tw`text-[#5A5A5A]`}>
+              <Text style={{ color: '#5A5A5A' }}>
                 One Special character
               </Text>
-
             </View>
-
           </View>
-          <View style={tw`flex flex-col items-start w-full mt-[35] gap-[9] w-[90%] mx-[5%]`}>
-            <View style={tw`bg-[#fff] h-[10] rounded-[10px] w-full flex flex-col items-center border-[1px] border-solid border-[#00936A]`}>
+          <View style={{ flexDirection: 'column', alignItems: 'flex-start', width: '100%', marginTop: 35, marginBottom: 9, width: '90%', marginLeft: '5%', gap: 25 }}>
+            <View style={{ backgroundColor: '#fff', height: 45, borderRadius: 10, width: '100%', flexDirection: 'column', alignItems: 'center', borderWidth: 1, borderColor: '#00936A', }}>
               <TextInput
-                style={tw`w-[94%] h-full mx-[3%]`}
+                style={{ width: '94%', height: '100%', marginLeft: '3%' }}
                 id="password"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -75,11 +73,10 @@ export const PasswordScreen = ({ navigation }) => {
                 placeholder={'Enter password'}
                 textContentType="password"
               />
-
             </View>
-            <View style={tw`bg-[#fff] h-[10] rounded-[10px] w-full flex flex-col items-center border-[1px] border-solid border-[#00936A]`}>
+            <View style={{ backgroundColor: '#fff', height: 45, borderRadius: 10, width: '100%', flexDirection: 'column', alignItems: 'center', borderWidth: 1, borderColor: '#00936A' }}>
               <TextInput
-                style={tw`w-[94%] h-full mx-[3%]`}
+                style={{ width: '94%', height: '100%', marginLeft: '3%' }}
                 id="password"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -87,25 +84,22 @@ export const PasswordScreen = ({ navigation }) => {
                 placeholder={'Confirm password'}
                 textContentType="password"
               />
-
             </View>
-
-            <TouchableOpacity onPress={() => {
-
-              console.log("This is login In")
-            }} style={tw`bg-[#00936A] h-[10] w-full rounded-[6px] flex items-center flex-col justify-center cursor-pointer`}>
-              <Text style={tw`text-[#ffffff] font-semibold text-center font-medium leading-[22px] text-[16px]`}>
+            <TouchableOpacity
+              onPress={() => {
+                console.log("This is login In")
+              }}
+              style={{ backgroundColor: '#00936A', height: 45, width: '100%', borderRadius: 6, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+            >
+              <Text style={{ color: '#ffffff', fontWeight: 'bold', textAlign: 'center', fontSize: 16, lineHeight: 22 }}>
                 Set Password
               </Text>
-
             </TouchableOpacity>
-
           </View>
-
         </View>
       </ScrollView>
-
     </View>
+
   )
 
 

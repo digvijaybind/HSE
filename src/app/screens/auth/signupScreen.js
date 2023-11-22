@@ -38,32 +38,27 @@ import tw from "twrnc"
 export const SignUpScreen = ({ navigation }) => {
 
   return (
-    <View style={tw`bg-[#00936A] w-full h-full relative`}>
-      <ScrollView style={tw``}>
-        <View style={tw`w-[90%] mx-[5%] h-full flex flex-col items-start mb-[30px]`}>
-          <View style={tw`flex flex-col items-center w-[70%] mx-[15%] mt-[50] gap-[8px]`}>
-            <Text style={tw`font-bold align-center text-[30px]`}>
+    <View style={{ backgroundColor: '#00936A', width: '100%', height: '100%', position: 'relative' }}>
+      <ScrollView style={{}}>
+        <View style={{ width: '90%', marginLeft: '5%', height: '100%', flexDirection: 'column', alignItems: 'flex-start', marginBottom: 30 }}>
+          <View style={{ flexDirection: 'column', alignItems: 'center', width: '70%', marginLeft: '15%', marginTop: 50, gap: 8 }}>
+            <Text style={{ fontWeight: 'bold', textAlign: 'center', fontSize: 30 }}>
               Let’s get started
             </Text>
             <Image
-              style={tw`w-full h-[59]`}
+              style={{ width: '100%', height: 195 }}
               source={require('../../../../assets/images/announcement.png')}
-
             />
-
-
           </View>
-          <View style={tw`flex flex-col items-center w-[80%] mx-[10%] gap-[8px] mt-[8px]`}>
-            <Text style={tw`text-[15px] text-[#fff] text-center`}>
+          <View style={{ flexDirection: 'column', alignItems: 'center', width: '80%', marginLeft: '10%', marginTop: 8, gap: 8 }}>
+            <Text style={{ fontSize: 15, color: '#fff', textAlign: 'center' }}>
               Creating an account is free & simple.
             </Text>
           </View>
-
-          <View style={tw`flex flex-col items-start w-full mt-[35] gap-[9] w-[95%] mx-[2.5%] w-[95%] mx-[2.5%] 
-`}>
-            <View style={tw`bg-[#fff] h-[10] rounded-[8] w-full flex flex-col items-center `}>
+          <View style={{ flexDirection: 'column', alignItems: 'flex-start', width: '100%', marginTop: 35, gap: 20, width: '95%', marginLeft: '2.5%', marginRight: '2.5%', justifyContent: 'center' }}>
+            <View style={{ backgroundColor: '#fff', height: 45, borderRadius: 8, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
               <TextInput
-                style={tw`w-[94%] h-full mx-[3%]`}
+                style={{ width: '94%', height: '100%', marginLeft: '3%' }}
                 id="email"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -71,11 +66,10 @@ export const SignUpScreen = ({ navigation }) => {
                 placeholder={'Enter Full Name'}
                 textContentType="name"
               />
-
             </View>
-            <View style={tw`bg-[#fff] h-[10] rounded-[10] w-full flex flex-col items-center `}>
+            <View style={{ backgroundColor: '#fff', height: 45, borderRadius: 10, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
               <TextInput
-                style={tw`w-[94%] h-full mx-[3%]`}
+                style={{ width: '94%', height: '100%', marginLeft: '3%' }}
                 id="email"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -83,11 +77,10 @@ export const SignUpScreen = ({ navigation }) => {
                 placeholder={'Enter Email id'}
                 textContentType="emailAddress"
               />
-
             </View>
-            <View style={tw`bg-[#fff] h-[10] rounded-[10] w-full flex flex-col items-center `}>
+            <View style={{ backgroundColor: '#fff', height: 45, borderRadius: 10, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
               <TextInput
-                style={tw`w-[94%] h-full mx-[3%]`}
+                style={{ width: '94%', height: '100%', marginLeft: '3%' }}
                 id="phone"
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -96,39 +89,37 @@ export const SignUpScreen = ({ navigation }) => {
                 textContentType="telephoneNumber"
               />
             </View>
-            <View style={tw`bg-[#fff] h-[10] rounded-[10] w-full flex flex-col items-center `}>
+            <View style={{ backgroundColor: '#fff', height: 45, borderRadius: 10, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
               <TextInput
-                style={tw`w-[94%] h-full mx-[3%]`}
+                style={{ width: '94%', height: '100%', marginLeft: '3%' }}
                 id="phone"
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType={'default'}
                 placeholder={'Enter Birthdate'}
-
               />
             </View>
-
-            <TouchableOpacity onPress={() =>navigation.navigate("confirmEmail")} style={tw`bg-[#003534] h-[10] w-full rounded-[10] flex items-center flex-col justify-center cursor-pointer`}>
-              <Text style={tw`text-[#ffffff] font-semibold text-center font-semibold leading-[22px] text-[16px]`}>
-              Create Account
+            <TouchableOpacity
+              onPress={() => navigation.navigate("confirmEmail")}
+              style={{ backgroundColor: '#003534', height: 45, width: '100%', borderRadius: 10, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}
+            >
+              <Text style={{ color: '#ffffff', fontWeight: 'bold', textAlign: 'center', fontSize: 16, lineHeight: 22 }}>
+                Create Account
               </Text>
-
             </TouchableOpacity>
           </View>
-          <View style={tw`flex flex-row justify-center items-center w-[70%] mx-[15%] mt-[10px]`}>
-            <Text style={tw`text-[14px] text-[#ffffff]`}>Already have an account ? </Text>
-            <TouchableOpacity onPress={() =>navigation.navigate("login")}>
-            <Text style={tw`text-[#000000] text-[14px]`}>
-            Log in 
-            </Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '70%', marginLeft: '15%', marginTop: 10 }}>
+            <Text style={{ fontSize: 14, color: '#ffffff' }}>Already have an account ? </Text>
+            <TouchableOpacity onPress={() => navigation.navigate("login")}>
+              <Text style={{ fontSize: 14, color: '#000000' }}>
+                Log in
+              </Text>
             </TouchableOpacity>
           </View>
-
         </View>
-
-
       </ScrollView>
     </View>
+
   )
 
 }
