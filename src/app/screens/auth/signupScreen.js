@@ -32,7 +32,6 @@ import {
 
 import { Ionicons } from '@expo/vector-icons';
 import CheckBox from 'expo-checkbox'
-import tw from "twrnc"
 
 
 export const SignUpScreen = ({ navigation }) => {

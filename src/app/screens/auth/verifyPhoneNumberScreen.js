@@ -30,8 +30,7 @@ import {
 } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
-import CheckBox from 'expo-checkbox'
-import tw from "twrnc";
+import CheckBox from 'expo-checkbox';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
