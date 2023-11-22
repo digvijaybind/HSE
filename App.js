@@ -93,16 +93,14 @@ export const App = () => {
           translucent={true}
         />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='login'>
-
-
-            {/* <            Stack.Screen
-              name="welcome"
-              component={WelcomeScreen}
+          <Stack.Navigator>
+          <Stack.Screen
+              name="login"
+              component={LoginScreen}
               options={{
                 headerShown: false,
               }}
-            /> */}
+            />
             <Stack.Screen
               name="onboarding"
               component={OnboardingScreen}
@@ -110,13 +108,7 @@ export const App = () => {
                 headerShown: false,
               }}
             />
-            <Stack.Screen
-              name="login"
-              component={LoginScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
+       
 
             <Stack.Screen name="signup"
               component={SignUpScreen}

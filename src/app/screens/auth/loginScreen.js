@@ -46,44 +46,11 @@ export const LoginScreen = ({ navigation }) => {
           <Text style={{ color: '#646464', fontSize: 30, fontWeight: 'bold', zIndex: 10, marginBottom: 20 }}>
             Login
           </Text>
-          <View style={{
-            backgroundColor: '#FFFFFF',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            width: 180, // Set your desired width
-            height: 180, // Set your desired height
-            borderRadius: 100,
-            ...Platform.select({
-              android: {
-                elevation: 24,
-                shadowColor: '#FFFCB9',
-                shadowOffset: {
-                  width: 0,
-                  height: 0,
-                },
-                shadowOpacity: 1,
-                shadowRadius: 10, // Use elevation for Android
-              },
-              ios: {
-                // For iOS, you may need to use a third-party library like react-native-shadow
-                // Example: https://github.com/879479119/react-native-shadow
-                shadowColor: '#FFFCB9',
-                shadowOffset: {
-                  width: 0,
-                  height: 0,
-                },
-                shadowOpacity: 1,
-                shadowRadius: 10,
-              },
-            })
-          }}>
+        
             <Image
-              style={{ width: '100%', height: '100%', borderRadius: 100, }}
-              source={require('../../../../assets/images/house.jpeg')}
+              style={{ width:180, height:180, borderRadius: 100}}
+              source={require('../../../../assets/images/house.png')}
             />
-
-          </View>
           <View style={{ width: '90%', marginLeft: '5%', marginRight: '5%', flexDirection: 'column', alignItems: 'center', marginTop: 20 }}>
             <Text style={{ color: '#fff', fontWeight: 'normal', fontFamily: 'Lato_400Regular' }}>Please login to continue</Text>
             <View style={{ flexDirection: 'column', alignItems: 'flex-start', width: '100%', marginTop: 18, marginBottom: 4, gap: 18 }}>
