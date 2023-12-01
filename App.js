@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React, { useCallback, useEffect, useState, useContext } from 'react';
+import React, { useCallback, useEffect, useState, useContext, useLayoutEffect } from 'react';
 import { StyleSheet, StatusBar, View } from 'react-native';
 import { Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
 import { Righteous_400Regular } from '@expo-google-fonts/righteous'
@@ -14,7 +14,6 @@ import AssetsContext from './src/app/context/Assetscontext';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { OnboardingScreen } from './src/app/screens/onboarding';
 import { LoginScreen } from './src/app/screens/auth/loginScreen';
 import { SignUpScreen } from './src/app/screens/auth/signupScreen';
 import { PasswordScreen } from './src/app/screens/auth/password_setup';
@@ -24,7 +23,7 @@ import { VerifyPhoneNumberScreen } from './src/app/screens/auth/verifyPhoneNumbe
 import { KycVerificationScreen } from './src/app/screens/auth/kycVerificationScreen'
 import {SelfieUploadingScreen} from './src/app/screens/auth/selfieUploadingScreen'
 
-SplashScreen.preventAutoHideAsync();
+
 const Stack = createNativeStackNavigator();
 
 export const App = () => {
@@ -41,9 +40,9 @@ export const App = () => {
 
 
   const loadAssetsAsync = async () => {
-    const asset = await Asset.loadAsync([
-      require('./assets/images/splash.png'),
-    ]);
+    // const asset = await Asset.loadAsync([
+    //   // require('./assets/images/splash.png'),
+    // ]);
     await loadAsync({
       Lato_400Regular,
       Lato_700Bold,
@@ -52,13 +51,13 @@ export const App = () => {
     });
 
 
-    return asset;
+    // return asset;
   };
 
   useEffect(() => {
     loadAssetsAsync()
       .then((a) => {
-        setAssets(a);
+        // setAssets(a);
         setAssetsLoaded(true);
       })
       .catch((e) => {
@@ -66,17 +65,9 @@ export const App = () => {
         setAssetsLoaded(false);
 
       });
-
-
-
   }, []);
 
 
-  const onLayoutRootView = useCallback(async () => {
-    if (assetsLoaded && loaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [assetsLoaded, loaded]);
 
   if (!assetsLoaded && !loaded) {
     return null;
@@ -86,38 +77,21 @@ export const App = () => {
   return (
     <AssetsContext.Provider value={{ assets, setAssets }}>
 
-      <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <View style={{ flex: 1 }} >
         <StatusBar
           barStyle="light-content"
           backgroundColor="transparent"
           translucent={true}
         />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='login'>
-
-
-            {/* <            Stack.Screen
-              name="welcome"
-              component={WelcomeScreen}
-              options={{
-                headerShown: false,
-              }}
-            /> */}
-            <Stack.Screen
-              name="onboarding"
-              component={OnboardingScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
+          <Stack.Navigator>
+          <Stack.Screen
               name="login"
               component={LoginScreen}
               options={{
                 headerShown: false,
               }}
             />
-
             <Stack.Screen name="signup"
               component={SignUpScreen}
               options={{
@@ -173,4 +147,4 @@ export const App = () => {
   )
 }
 
-export default App;
+export default App;useCallback

@@ -1,18 +1,3 @@
-/**
- * Copyright 2023 Miracle Software 
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   View,
@@ -30,95 +15,84 @@ import {
 } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
-import CheckBox from 'expo-checkbox'
-import tw from "twrnc";
+import CheckBox from 'expo-checkbox';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 export const AfterEmailVerificationScreen = ({ navigation }) => {
   return (
-    <View style={tw`bg-[#00936A] w-full h-full relative `}>
-      <ScrollView style={tw``}>
-        <View style={tw`w-[90%] mx-[5%] h-full flex flex-col items-start mb-[30px]`}>
-          <View style={tw`w-full h-full flex flex-col items-start mb-[30px] gap-[20px]`}>
-            <Text style={tw`mt-[50px] text-[20px] max-w-[13rem] leading-[28px] font-semibold `}>
+    <View style={{ backgroundColor: '#00936A', width: '100%', height: '100%', position: 'relative' }}>
+      <ScrollView style={{}}>
+        <View style={{ width: '90%', marginLeft: '5%', height: '100%', flexDirection: 'column', alignItems: 'flex-start', marginBottom: 30 }}>
+          <View style={{ width: '100%', height: '100%', flexDirection: 'column', alignItems: 'flex-start', marginBottom: 30, marginTop: 20, gap: 20 }}>
+            <Text style={{ marginTop: 50, fontSize: 20, maxWidth: '13rem', lineHeight: 28, fontWeight: 'bold', color: '#000000' }}>
               Let's prepare you for investing.
             </Text>
-            <Text style={tw`text-[#00000066] text-[17px]`}>
+            <Text style={{ color: '#00000066', fontSize: 17 }}>
               Complete the steps to proceed.
             </Text>
-            <View style={tw`flex flex-col items-start w-full mt-[10px] gap-[19px] w-[95%] mx-[2.5%] w-[95%] mx-[2.5%] justify-center
-`}>
-              <View style={tw`bg-[#fff] h-[70px] rounded-[8px] w-full flex flex-col items-center justify-center`}>
-                <View style={tw`w-[95%] mx-[2.5%] flex flex-row justify-between items-center`}>
-                  <View style={tw`flex flex-col items-start justify-center gap-[5px]`}>
-                    <Text style={tw`text-[#3C3C4399]`}>STEP 1</Text>
-                    <Text style={tw`text-[#3C3C4399]`}>Create your account.</Text>
+            <View style={{ flexDirection: 'column', alignItems: 'flex-start', width: '100%', marginTop: 10, gap: 19, width: '95%', marginLeft: '2.5%', marginRight: '2.5%', justifyContent: 'center' }}>
+              <View style={{ backgroundColor: '#fff', height: 70, borderRadius: 8, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ width: '95%', marginLeft: '2.5%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: 5 }}>
+                    <Text style={{ color: '#3C3C4399' }}>STEP 1</Text>
+                    <Text style={{ color: '#3C3C4399' }}>Create your account.</Text>
                   </View>
                   <Image
-                    style={tw`w-[30px] h-[30px]`}
+                    style={{ width: 30, height: 30 }}
                     source={require('../../../../assets/images/progress_mark.png')}
-
                   />
-
                 </View>
-
               </View>
-              <View style={tw`bg-[#fff] h-[70px] rounded-[8px] w-full flex flex-col items-center justify-center`}>
-                <View style={tw`w-[95%] mx-[2.5%] flex flex-row justify-between items-center`}>
-                  <View style={tw`flex flex-col items-start justify-center gap-[5px]`}>
-                    <Text style={tw`text-[#3C3C4399]`}>STEP 2</Text>
-                    <Text style={tw`text-[#3C3C4399]`}>Verify your Email id.</Text>
+              <View style={{ backgroundColor: '#fff', height: 70, borderRadius: 8, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ width: '95%', marginLeft: '2.5%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: 5 }}>
+                    <Text style={{ color: '#3C3C4399' }}>STEP 2</Text>
+                    <Text style={{ color: '#3C3C4399' }}>Verify your Email id.</Text>
                   </View>
                   <Image
-                    style={tw`w-[30px] h-[30px]`}
+                    style={{ width: 30, height: 30 }}
                     source={require('../../../../assets/images/progress_mark.png')}
-
                   />
-
                 </View>
-
               </View>
-              <View style={tw`bg-[#fff] h-[70px] rounded-[8px] w-full flex flex-col items-center justify-center`}>
-                <View style={tw`w-[95%] mx-[2.5%] flex flex-row justify-between items-center`}>
-                  <View style={tw`flex flex-col items-start justify-center gap-[5px]`}>
-                    <Text style={tw`text-[#000000]`}>STEP 3</Text>
-                    <Text style={tw`text-[#000000]`}>Verify your Phone Number.</Text>
+              <View style={{ backgroundColor: '#fff', height: 70, borderRadius: 8, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ width: '95%', marginLeft: '2.5%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: 5 }}>
+                    <Text style={{ color: '#000000' }}>STEP 3</Text>
+                    <Text style={{ color: '#000000' }}>Verify your Phone Number.</Text>
                   </View>
-
                 </View>
-
               </View>
-              <View style={tw`bg-[#fff] h-[70px] rounded-[8px] w-full flex flex-col items-center justify-center`}>
-                <View style={tw`w-[95%] mx-[2.5%] flex flex-row justify-between items-center`}>
-                  <View style={tw`flex flex-col items-start justify-center gap-[5px]`}>
-                    <Text style={tw`text-[#000000]`}>STEP 4</Text>
-                    <Text style={tw`text-[#000000]`}>Add Bank account to create a Wallet.</Text>
+              <View style={{ backgroundColor: '#fff', height: 70, borderRadius: 8, width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ width: '95%', marginLeft: '2.5%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: 5 }}>
+                    <Text style={{ color: '#000000' }}>STEP 4</Text>
+                    <Text style={{ color: '#000000' }}>Add Bank account to create a Wallet.</Text>
                   </View>
-
                 </View>
-
               </View>
-              <TouchableOpacity onPress={() => navigation.navigate("verifyPhoneNumber")}
-                style={tw`bg-[#003534] h-[10] w-full rounded-[6px] flex items-center flex-col justify-center cursor-pointer`}>
-                <Text style={tw`text-[#ffffff] font-semibold text-center font-medium leading-[22px] text-[16px]`}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("verifyPhoneNumber")}
+                style={{ backgroundColor: '#003534', height: 45, width: '100%', borderRadius: 6, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 5 }}
+              >
+                <Text style={{ color: '#ffffff', fontWeight: 'bold', textAlign: 'center', fontSize: 16, lineHeight: 22 }}>
                   Continue
                 </Text>
-
               </TouchableOpacity>
-              <View style={tw`flex flex-row justify-center items-center w-[70%] mx-[15%] gap-[10px]`}>
-                <Text style={tw`text-[14px] text-[#ffffff]`}>Do this later.</Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '70%', marginLeft: '15%', gap: 10 }}>
+                <Text style={{ fontSize: 14, color: '#ffffff' }}>Do this later.</Text>
                 <TouchableOpacity onPress={() => navigation.navigate("login")}>
-                  <Text style={tw`text-[#000000] text-[14px]`}>
+                  <Text style={{ fontSize: 14, color: '#000000' }}>
                     Skip
                   </Text>
                 </TouchableOpacity>
               </View>
-
             </View>
           </View>
-
-
-        </View></ScrollView></View>)
+        </View>
+      </ScrollView>
+    </View>
+  )
 
 }

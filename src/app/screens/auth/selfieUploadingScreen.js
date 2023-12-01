@@ -1,18 +1,3 @@
-/**
- * Copyright 2023 Miracle Software 
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   View,
@@ -30,45 +15,46 @@ import {
 } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
-import CheckBox from 'expo-checkbox'
-import tw from "twrnc";
+import CheckBox from 'expo-checkbox';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 export const SelfieUploadingScreen = ({ navigation }) => {
   return (
-    <View style={tw`bg-[#ffffff] w-full h-full relative `}>
-      <ScrollView style={tw``}>
-        <View style={tw`w-[90%] mx-[5%] h-full flex flex-col items-start mb-[30px]`}>
+    <View style={{ backgroundColor: '#ffffff', width: '100%', height: '100%', position: 'relative' }}>
+      <ScrollView style={{}}>
+        <View style={{ width: '90%', marginLeft: '5%', height: '100%', flexDirection: 'column', alignItems: 'flex-start', marginBottom: 30 }}>
           <MaterialCommunityIcons
             style={{ marginTop: 35 }}
             name="chevron-left"
             size={30}
           />
-          <View style={tw`w-full flex justify-center items-center flex-col gap-[150px] `}>
-            <Text style={tw`text-[22px] font-bold text-[#00936A]`}>
+          <View style={{ width: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 150 }}>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#00936A' }}>
               Verify your Identity !
             </Text>
-            <View style={tw`w-full flex justify-center items-center flex-col `}>
+            <View style={{ width: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
               <Image
-                style={tw`w-[60px] h-[60px]`}
+                style={{ width: 60, height: 60 }}
                 source={require('../../../../assets/images/face_recog.png')}
-
               />
-              <Text style={tw`text-[#5A5A5A] text-[18px] text-center leading-[26px] mt-[10px]`}>
+              <Text style={{ color: '#5A5A5A', fontSize: 18, textAlign: 'center', lineHeight: 26, marginTop: 10 }}>
                 Take a photo of your face using front camera.
               </Text>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate("afterConfirmEmail")} style={tw`bg-[#00936A] h-[10] w-full rounded-[6px] flex items-center flex-col justify-center cursor-pointer`}>
-              <Text style={tw`text-[#ffffff] font-semibold text-center font-medium leading-[22px] text-[16px]`}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("afterConfirmEmail")}
+              style={{ backgroundColor: '#00936A', height: 45, width: '100%', borderRadius: 6, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+            >
+              <Text style={{ color: '#ffffff', fontWeight: 'bold', textAlign: 'center', fontSize: 16, lineHeight: 22 }}>
                 Start
               </Text>
-
             </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
     </View>
+
 
   )
 
